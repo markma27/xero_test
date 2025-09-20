@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main style={{ padding: 24 }}>
-      <h1>JM Productivity Dashboard – Xero OAuth Prototype (SDK)</h1>
+      <h1>XPM Dashboard – Xero OAuth Prototype (SDK)</h1>
       <a 
         href="/api/xero/connect" 
         style={{ 

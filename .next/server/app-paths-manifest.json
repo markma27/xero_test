@@ -1,7 +1,7 @@
 {
   "/page": "app/page.js",
   "/api/xero/connect/route": "app/api/xero/connect/route.js",
-  "/api/xero/demo/route": "app/api/xero/demo/route.js",
   "/xero/connected/page": "app/xero/connected/page.js",
+  "/api/xero/demo/route": "app/api/xero/demo/route.js",
   "/api/xero/callback/route": "app/api/xero/callback/route.js"
 }

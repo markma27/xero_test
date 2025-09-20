@@ -24,7 +24,13 @@ export async function GET(req: NextRequest) {
     // Accounting Organisations (requires suitable Accounting read scope; if omitted you'll see 401)
     let organisation = null;
     try {
+      console.log(`Making API call to getOrganisations for tenant: ${tid}`);
       const orgResponse = await xero.accountingApi.getOrganisations(tid);
+      console.log('API call successful:', {
+        statusCode: orgResponse.response?.status,
+        organisationCount: orgResponse.body?.organisations?.length || 0,
+        organisationNames: orgResponse.body?.organisations?.map(org => org.name) || []
+      });
       organisation = {
         organisations: orgResponse.body?.organisations?.map(org => ({
           organisationID: org.organisationID,
@@ -47,35 +53,7 @@ export async function GET(req: NextRequest) {
           periodLockDate: org.periodLockDate,
           timezone: org.timezone,
           organisationEntityType: org.organisationEntityType,
-          shortCode: org.shortCode,
-          addressLine1: org.addressLine1,
-          addressLine2: org.addressLine2,
-          addressLine3: org.addressLine3,
-          addressLine4: org.addressLine4,
-          city: org.city,
-          region: org.region,
-          postalCode: org.postalCode,
-          country: org.country,
-          phone: org.phone,
-          fax: org.fax,
-          website: org.website,
-          email: org.email,
-          taxNumber: org.taxNumber,
-          registrationNumber: org.registrationNumber,
-          bankAccounts: org.bankAccounts?.map(account => ({
-            accountID: account.accountID,
-            code: account.code,
-            name: account.name,
-            accountType: account.accountType,
-            bankAccountNumber: account.bankAccountNumber,
-            status: account.status,
-            description: account.description,
-            bankAccountType: account.bankAccountType,
-            currencyCode: account.currencyCode,
-            currentBalance: account.currentBalance,
-            maskedAccountNumber: account.maskedAccountNumber,
-            bankCode: account.bankCode
-          })) || []
+          registrationNumber: org.registrationNumber
         })) || []
       };
     } catch (orgError: any) {
