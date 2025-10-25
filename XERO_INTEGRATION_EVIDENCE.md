@@ -11,10 +11,9 @@ This document provides evidence of successful Xero OAuth 2.0 integration and Acc
 - **Scopes**: `["openid", "profile", "email", "offline_access", "accounting.settings"]`
 - **Redirect URI**: `http://localhost:3000/api/xero/callback`
 
-### API Calls Demonstrated
-- **Endpoint**: `GET /api.xro/2.0/Organisation`
-- **Method**: `xero.accountingApi.getOrganisations(tenantId)`
-- **Organization**: Xero Demo Company (AU)
+### API Calls Demonstrated (XPM only)
+- **Endpoint**: `GET https://api.xero.com/connections` (resolve tenant)
+- **Endpoint**: `GET https://api.xero.com/practicemanager/2.0/invoices` (date range)
 - **Status**: ✅ Successfully executed
 
 ### Security Implementation
@@ -64,9 +63,9 @@ src/
 ```
 
 ### Key Features Demonstrated
-1. **OAuth 2.0 Flow**: Complete authorization code flow
+1. **OAuth 2.0 Flow**: Complete authorization code flow (XPM-only scopes)
 2. **Token Management**: Secure storage and automatic refresh
-3. **API Integration**: Successful Accounting API calls
+3. **API Integration**: /connections + XPM endpoints
 4. **Error Handling**: Proper error handling and user feedback
 5. **Security**: Encrypted token storage and secure configuration
 

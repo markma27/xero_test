@@ -1,4 +1,9 @@
 {
   "/page": "app/page.js",
-  "/xero/connected/page": "app/xero/connected/page.js"
+  "/api/xero/callback/route": "app/api/xero/callback/route.js",
+  "/api/xpm/connect/route": "app/api/xpm/connect/route.js",
+  "/xpm/connected/page": "app/xpm/connected/page.js",
+  "/xero/connected/page": "app/xero/connected/page.js",
+  "/api/xero/demo/route": "app/api/xero/demo/route.js",
+  "/api/xpm/invoices/route": "app/api/xpm/invoices/route.js"
 }

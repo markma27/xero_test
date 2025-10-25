@@ -10,6 +10,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
+    "/xpm/connected/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/xpm/connected/page.js"
+    ],
     "/xero/connected/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

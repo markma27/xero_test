@@ -9,7 +9,7 @@ A Xero OAuth 2.0 prototype built with Next.js, xero-node SDK, and Supabase to me
 - ✅ Supabase database integration
 - ✅ Automatic token refresh
 - ✅ Connection management (via updateTenants())
-- ✅ Accounting API calls (getOrganisations)
+  
 
 ## Tech Stack
 
@@ -69,9 +69,11 @@ Visit http://localhost:3000 to get started.
 
 ## API Endpoints
 
-- `GET /api/xero/connect` - Start OAuth flow
+- `GET /api/xero/connect` - Start OAuth flow (XPM-only scopes)
+- `GET /api/xpm/connect` - Explicit XPM-only consent
 - `GET /api/xero/callback` - OAuth callback handling
-- `GET /api/xero/demo?tenantId=xxx` - Get connection and organization information
+- `GET /api/xero/demo?tenantId=xxx` - Get connections via /connections
+- `GET /api/xpm/invoices?tenantId=xxx&from=YYYY-MM-DD&to=YYYY-MM-DD` - XPM invoices
 
 ## Security Features
 
